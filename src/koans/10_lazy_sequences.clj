@@ -17,7 +17,7 @@
      (drop 95 (range 100)))
 
   "Iteration provides an infinite lazy sequence"
-  (= [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19] (take 20 (iterate inc 0)))
+  (= (take 20 (range 100)) (take 20 (iterate inc 0)))
 
   "Repetition is key"
   (= [:a :a :a :a :a :a :a :a :a :a ]
@@ -25,4 +25,4 @@
 
   "Iteration can be used for repetition"
   (= (repeat 100 :foo)
-     (take 100 (iterate inc 1 :foo))))
+     (take 100 (iterate identity :foo))))
